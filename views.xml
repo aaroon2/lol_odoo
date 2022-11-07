@@ -23,6 +23,19 @@
 	    </calendar>
 	</field>
     </record>
+
+    <!-- add search view -->
+    <record id="batallas_search" model="ir.ui.view">
+	<field name="name">Batallas Search</field>
+	<field name="model">lol.batallas</field>
+	<field name="type">search</field>
+	<field name="arch" type="xml">
+	    <search string="Batallas">
+		<field name="name"/>
+		<field name="fecha"/>
+	    </search>
+	</field>
+    </record>
     
     <menuitem id="menu_lol" name="LoL" />
     <menuitem id="menu_heroes" name="Heroes" parent="menu_lol" action="Heroes_action"/>
@@ -39,6 +52,31 @@
 	</form>
     </field>
     </record>
+
+    <record id="Heroes_tree" model="ir.ui.view">
+    <field name="name">heroes.tree</field>
+    <field name="model">lol.heroes</field>
+    <field name="arch" type="xml">
+	<tree string="Heroes">
+	    <field name="name"/>
+	    <field name="procedencia"/>
+	</tree>
+    </field>
+    </record>
+
+<!-- add heroes search view	-->
+    <record id="heroes_search" model="ir.ui.view">
+	<field name="name">Heroes Search</field>
+	<field name="model">lol.heroes</field>
+	<field name="type">search</field>
+	<field name="arch" type="xml">
+	    <search string="Heroes">
+		<field name="name"/>
+		<field name="procedencia"/>
+	    </search>
+	</field>
+    </record>
+
     <record id="Debilidades_action" model="ir.actions.act_window">
 	<field name="name">Debilidades</field>
 	<field name="res_model">lol.debilidades</field>
