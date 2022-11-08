@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-		<field name="name">Heroes</field>
-		
-		<field name="res_model">lol.heroes</field>
-		<field name="view_mode">tree,form</field>
-    </record>
+	<field name="name">Heroes</field>
+
+	<field name="res_model">lol.heroes</field>
+	<field name="view_mode">tree,form</field>
+	</record>
 
 
 	<record id="Villanos_action" model="ir.actions.act_window">
 		<field name="name">Villanos</field>
 		<field name="res_model">lol.villanos</field>
-		<field name="view_mode">tree,form</field>	
-    </record>
+		<field name="view_mode">tree,form</field>
+	</record>
 
-    <!-- add batallas act_windows -->
-    <record id="batallas_action" model="ir.actions.act_window">
+	<!-- add batallas act_windows -->
+	<record id="batallas_action" model="ir.actions.act_window">
 		<field name="name">Batallas</field>
 		<field name="res_model">lol.batallas</field>
 		<field name="view_mode">tree,form,calendar</field>
-    </record>
-    
-    <record id="Batallas_calendar" model="ir.ui.view">
+	</record>
+
+	<record id="Batallas_calendar" model="ir.ui.view">
 		<field name="name">Batallas Calendar</field>
 		<field name="model">lol.batallas</field>
 		<field name="type">calendar</field>
 		<field name="arch" type="xml">
 			<calendar string="Batallas" date_start="fecha">
-			<field name="name"/>
-			<field name="fecha"/>
+				<field name="name" />
+				<field name="fecha" />
 			</calendar>
-			
-		</field>
-    </record>
 
-    <!-- add search view -->
-    <record id="batallas_search" model="ir.ui.view">
-	<field name="name">Batallas Search</field>
-	<field name="model">lol.batallas</field>
-	<field name="type">search</field>
-	<field name="arch" type="xml">
-	    <search string="Batallas">
-		<field name="name"/>
-		<field name="fecha"/>
-	    </search>
-	</field>
-    </record>
-    
-    <menuitem id="menu_lol" name="LoL" />
-    <menuitem id="menu_heroes" name="Heroes" parent="menu_lol" action="Heroes_action"/>
-	<menuitem id="menu_villanos" name="Villanos" parent="menu_lol" action="Villanos_action"/>
-    <menuitem id="menu_batallas" name="Batallas" parent="menu_lol" action="batallas_action"/>
+		</field>
+	</record>
+
+	<!-- add search view -->
+	<record id="batallas_search" model="ir.ui.view">
+		<field name="name">Batallas Search</field>
+		<field name="model">lol.batallas</field>
+		<field name="type">search</field>
+		<field name="arch" type="xml">
+			<search string="Batallas">
+				<field name="name" />
+				<field name="fecha" />
+			</search>
+		</field>
+	</record>
+
+	<menuitem id="menu_lol" name="LoL" />
+	<menuitem id="menu_heroes" name="Heroes" parent="menu_lol" action="Heroes_action" />
+	<menuitem id="menu_villanos" name="Villanos" parent="menu_lol" action="Villanos_action" />
+	<menuitem id="menu_batallas" name="Batallas" parent="menu_lol" action="batallas_action" />
 
 	<record id="Heroes_form" model="ir.ui.view">
 		<field name="name">heroes.form</field>
@@ -57,7 +57,7 @@
 		<field name="arch" type="xml">
 			<form string="Heroes">
 				<group>
-					<field name="name"/>
+					<field name="name" />
 				</group>
 			</form>
 		</field>
@@ -68,31 +68,31 @@
 		<field name="arch" type="xml">
 			<form string="Villanos">
 				<group>
-					<field name="name"/>
+					<field name="name" />
 				</group>
 			</form>
 		</field>
-    </record>
-    <record id="Debilidades_action" model="ir.actions.act_window">
-	<field name="name">Debilidades</field>
-	<field name="res_model">lol.debilidades</field>
-	<field name="view_mode">tree,form</field>
-    </record>
-<menuitem
-	id="lol_root_menu"
-	name="LOL"
-	sequence="10"/>
-<menuitem
-	id="heroes_menu"
-	name="heroes"
-	action="Heroes_action"
-	parent="lol_root_menu"/>
-<menuitem
-	id="villanos_menu"
-	name="villanos"
-	action="Villanos_action"
-	parent="lol_root_menu"/>
-<menuitem name="Debilidades" id="debilides_menu" parent="lol_root_menu" action="Debilidades_action"/>
-    <!-- add batallas menuitem -->
-    <menuitem id="batallas_menu" name="Batallas" parent="lol_root_menu" action="batallas_action" />
+	</record>
+	<record id="Debilidades_action" model="ir.actions.act_window">
+		<field name="name">Debilidades</field>
+		<field name="res_model">lol.debilidades</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem
+		id="lol_root_menu"
+		name="LOL"
+		sequence="10" />
+	<menuitem
+		id="heroes_menu"
+		name="heroes"
+		action="Heroes_action"
+		parent="lol_root_menu" />
+	<menuitem
+		id="villanos_menu"
+		name="villanos"
+		action="Villanos_action"
+		parent="lol_root_menu" />
+	<menuitem name="Debilidades" id="debilides_menu" parent="lol_root_menu" action="Debilidades_action" />
+	<!-- add batallas menuitem -->
+	<menuitem id="batallas_menu" name="Batallas" parent="lol_root_menu" action="batallas_action" />
 </odoo>
