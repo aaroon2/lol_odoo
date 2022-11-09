@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<record id="heroes_action" model="ir.actions.act_window">
 	<field name="name">Heroes</field>
-
 	<field name="res_model">lol.heroes</field>
 	<field name="view_mode">tree,form</field>
 	</record>
@@ -93,6 +93,4 @@
 		action="Villanos_action"
 		parent="lol_root_menu" />
 	<menuitem name="Debilidades" id="debilides_menu" parent="lol_root_menu" action="Debilidades_action" />
-	<!-- add batallas menuitem -->
-	<menuitem id="batallas_menu" name="Batallas" parent="lol_root_menu" action="batallas_action" />
 </odoo>
